@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Store = use('App/Models/Store');
+
 /**
  * Resourceful controller for interacting with stores
  */
@@ -17,7 +19,10 @@ class StoreController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index () {
+    const stores = await Store.all();
+
+    return stores;
   }
 
     /**
@@ -28,7 +33,11 @@ class StoreController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ({ request, auth }) {
+    const data = request.only(['email','password','name','description','neighborhood','address','schedule','telephone','instagram','facebook','logoPath']);
+    const store = await Store.create({user_id: auth.user.id, ...data});
+
+    return store;
   }
 
   /**
@@ -40,19 +49,10 @@ class StoreController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
-  }
+  async show ({ params }) {
+    const store = await Store.findOrFail(params.id);
 
-  /**
-   * Render a form to update an existing store.
-   * GET stores/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
+    return store;
   }
 
   /**
@@ -74,7 +74,11 @@ class StoreController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, auth, response }) {
+    const store = await Store.findOrFail(params.id);
+    
+
+    await store.delete();
   }
 }
 

@@ -10,7 +10,7 @@ class StoreSchema extends Schema {
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
       table.string('name', 100).notNullable()
-      table.string('description', 140).nullable()
+      table.string('description', 254).nullable()
       table.string('neighborhood', 100).nullable()
       table.string('address', 100).nullable()
       table.string('schedule', 100).nullable()
