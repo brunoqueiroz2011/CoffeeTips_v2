@@ -19,7 +19,7 @@ The project documentation is in [Drive](https://drive.google.com/open?id=1lyWDgD
 #### Composer
     Execute the following command to get the latest version of the package:
 ```
-	composer require prettus/l5-repository    
+composer require prettus/l5-repository    
 ```
 ### Installing Laravel
 #### Via Laravel CLI
@@ -27,10 +27,10 @@ Laravel utilizes Composer to manage its dependencies. So, before using Laravel, 
 
 Install it globally via composer like so:
 ```
-	composer global require laravel/installer
+composer global require laravel/installer
 ```
 ### Serving the application
 Once the installation process has completed, you can cd into your new application directory and run the following command to start the HTTP Server:
 ```
-    php artisan serve
+php artisan serve
 ```
