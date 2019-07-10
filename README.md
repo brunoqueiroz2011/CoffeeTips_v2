@@ -1,5 +1,5 @@
 # CoffeeTips
-Creating the CoffeTips application in version 2.0 using the AdonisJs framework
+Creating the CoffeTips application in version 2.0 using the Laravel framework
 
 ## Documentação do projeto.
 The project documentation is in [Drive](https://drive.google.com/open?id=1lyWDgDLKjg2YekjZLzIhk5_cnnQoydYKqSOcd29H7QQ)
@@ -7,23 +7,20 @@ The project documentation is in [Drive](https://drive.google.com/open?id=1lyWDgD
 ## Instalation
 
 ### System Requirements
-    The only dependencies of the framework are Node.js and npm.
+#### Composer
+    Execute the following command to get the latest version of the package:
 
-    Ensure your versions of those tools match the following criteria:
+		composer require prettus/l5-repository    
 
-    Node.js >= 8.0.0
+### Installing Laravel
+#### Via Laravel CLI
+Laravel utilizes Composer to manage its dependencies. So, before using Laravel, make sure you have Composer installed on your machine.
 
-    npm >= 3.0.0
+Install it globally via composer like so:
 
-### Installing AdonisJs
-#### Via AdonisJs CLI
-AdonisJs CLI is a command line tool to help you install AdonisJs.
-
-Install it globally via npm like so:
-
-    npm i -g @adonisjs/cli
+		composer global require laravel/installer
 
 ### Serving the application
 Once the installation process has completed, you can cd into your new application directory and run the following command to start the HTTP Server:
     
-    adonis serve --dev
+    php artisan serve
