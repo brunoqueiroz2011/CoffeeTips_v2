@@ -14,7 +14,9 @@ The project documentation is in [Drive](https://drive.google.com/open?id=1lyWDgD
 
 
 ## Instalation
-
+```
+	composer install
+```	
 ### System Requirements
 #### Composer
     Execute the following command to get the latest version of the package:
