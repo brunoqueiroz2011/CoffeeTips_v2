@@ -66,4 +66,8 @@ class Store extends Model
     public function events(){
         return $this->hasMany('App\Event');
     }
+
+    public function cards_banners(){
+        return $this->belongsToMany('App\Card_Banner', 'payments__methods');
+    }
 }
