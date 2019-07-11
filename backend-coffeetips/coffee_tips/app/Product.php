@@ -24,4 +24,12 @@ class Product extends Model
         'description',
         'price',
     ];
+
+    public function stores(){
+        return $this->belongsTo('App\Store');
+    }
+
+    public function categories(){
+        return $this->belongsTo('App\Category');
+    }
 }
