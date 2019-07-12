@@ -14,6 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
+        echo "Teste";
         $store = Store::all();
         return $store->toJson();
     }

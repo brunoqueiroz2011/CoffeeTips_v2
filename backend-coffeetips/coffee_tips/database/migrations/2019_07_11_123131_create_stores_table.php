@@ -39,6 +39,7 @@ class CreateStoresTable extends Migration
             $table->string('second_img_local');
             $table->string('third_img_local');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
