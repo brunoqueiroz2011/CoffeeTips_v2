@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Store;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class StoreController extends Controller
 {
@@ -15,7 +16,7 @@ class StoreController extends Controller
     public function index()
     {
         $store = Store::all();
-        return $store;
+        return $store-toJSON();
     }
 
     /**

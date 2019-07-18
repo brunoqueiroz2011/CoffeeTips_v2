@@ -14,21 +14,20 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    Route::get('/stores', 'StoreController@index'); // return all stores
-    Route::post('/stores', 'StoreController@store'); //Make the store insert into the table
     return $request->user();
 });
 
 Route::middleware('auth:api')->get('/store', function(Request $request){
-    //Route::post('/stores', 'StoreController@store'); //Make the store insert into the table
+    return $request->store();
 });
 
-Route::get('/stores', 'StoreController@index'); // return all stores
-Route::get('/stores/{id}', 'StoreController@show');// return to specific store by id
+//Route::get('/stores', 'StoreController@index'); // return all stores
 //Route::post('/stores', 'StoreController@store'); //Make the store insert into the table
-Route::get('/stores/update/{id}', 'StoreController@update'); //Make the store update into the table
-Route::get('/stores/disable/{id}', 'StoreController@disable'); //Make the store deactivation into the table
-Route::get('/stores/delete/{id}', 'StoreController@destroy'); //Make the store destroy into the table
+//Route::get('/stores/{id}', 'StoreController@show');// return to specific store by id
+//Route::post('/stores', 'StoreController@store'); //Make the store insert into the table
+//Route::get('/stores/update/{id}', 'StoreController@update'); //Make the store update into the table
+//Route::get('/stores/disable/{id}', 'StoreController@disable'); //Make the store deactivation into the table
+//Route::get('/stores/delete/{id}', 'StoreController@destroy'); //Make the store destroy into the table
 
 
 
