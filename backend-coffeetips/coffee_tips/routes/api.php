@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:api')->get('/store', function(Request $request){
+Route::middleware('auth:store-api')->get('/store', function(Request $request){
     return $request->store();
 });
 

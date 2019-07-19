@@ -8,6 +8,17 @@ use function MongoDB\BSON\toJSON;
 
 class StoreController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:store');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +26,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $store = Store::all();
-        return $store-toJSON();
+        //$store = Store::all();
+        return view('coffee');
     }
 
     /**
