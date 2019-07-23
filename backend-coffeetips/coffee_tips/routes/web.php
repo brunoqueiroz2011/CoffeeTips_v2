@@ -20,4 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/coffee', 'StoreController@index')->name('coffee');
+Route:prefix('/stores')->group(function (){
+    Route::get('/coffee', 'StoreController@index')->name('coffee');
+
+});

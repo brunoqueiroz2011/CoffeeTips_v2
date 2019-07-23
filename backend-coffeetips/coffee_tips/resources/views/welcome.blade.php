@@ -41,15 +41,63 @@
         .gif{
             width: 40%;
         }
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: -26px;
+        }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        @media (max-width:776px){
+            .title {
+            font-size: 50px;
+            color: #BF6C3B;
+            }
+            .gif{
+                width: 100%;
+            }
+            .top-right {
+            position: absolute;
+            right: 80px;
+            top: -26px;
+        }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        }
+
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+                <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a class="btn" href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        </div>
+    @endif
     <div class="content">
-        <div class="title m-b-md">
+        <div class="m-b-md">
             <div>
-                Bem vindo ao Coffee Tips
+                <h1 class="title">Bem vindo ao Coffee Tips</h1>                
             </div>
             <img class="gif" src="{{ asset('images/coffee.gif') }}" />
         </div>

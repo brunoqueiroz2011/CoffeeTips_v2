@@ -16,7 +16,7 @@ class StoreController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:store');
+        $this->middleware('guest:store');
     }
 
     /**
@@ -158,5 +158,18 @@ class StoreController extends Controller
             'error' => false,
             'message' => 'Cafeteria excluida com sucesso!'
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+        return response()->json([
+            'result' => 'Deslogado com sucesso!!!'
+        ]);
+    }
+
+    public function login()
+    {
+
     }
 }

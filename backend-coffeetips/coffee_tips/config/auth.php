@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
             'hash' => false,
         ],
@@ -53,7 +53,7 @@ return [
         ],
 
         'store-api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'stores',
             'hash' => false,
         ],
