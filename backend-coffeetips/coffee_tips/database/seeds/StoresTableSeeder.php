@@ -13,15 +13,13 @@ class StoresTableSeeder extends Seeder
     public function run()
     {
         DB::table('stores')->insert([
-            'name'=> 'Café do Brejo',
-            'email' => 'cafebrejo@gmail.com',
-            'password' => bcrypt('1234567890'),
+            'user_id' => 1,
             'description' => 'Viemos do sertão (Triunfo) somos a primeira cafeteria com torrefação própria do estado, trabalhando com vários métodos de filtrados e com melhores grãos do Brasil.',
             'neighborhood' => 'Santo Amaro',
             'number' => '20',
             'city' => 'Recife',
             'state' => 'Pernambuco',
-            'cep' => '50040-080',
+            'cep' => '50040080',
             'country' => 'Brasil',
             'street' => 'Rua Capitão Lima',
             'schedule' => 'Seg - Sex 07h às 21h e Sáb 07h às 14h',
