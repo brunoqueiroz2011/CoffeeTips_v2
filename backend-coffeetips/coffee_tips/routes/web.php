@@ -19,8 +19,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route:prefix('/stores')->group(function (){
-    Route::get('/coffee', 'StoreController@index')->name('coffee');
-
-});
