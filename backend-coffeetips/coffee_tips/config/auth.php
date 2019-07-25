@@ -46,17 +46,6 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
-        'store' => [
-            'driver' => 'session',
-            'provider' => 'stores',
-        ],
-
-        'store-api' => [
-            'driver' => 'passport',
-            'provider' => 'stores',
-            'hash' => false,
-        ],
     ],
 
     /*
@@ -80,11 +69,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-
-        'stores' => [
-            'driver' => 'eloquent',
-            'model' => App\Store::class,
         ],
 
         // 'users' => [
@@ -111,12 +95,6 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-
-        'stores' => [
-            'provider' => 'stores',
             'table' => 'password_resets',
             'expire' => 60,
         ],
