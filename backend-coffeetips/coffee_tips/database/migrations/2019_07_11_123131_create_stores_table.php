@@ -15,16 +15,15 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->string('description');
             $table->string('neighborhood');
             $table->integer('number');
             $table->string('city');
             $table->string('state');
-            $table->string('cep');
+            $table->string('cep',8);
             $table->string('country');
             $table->string('street');
             $table->string('schedule');
@@ -38,9 +37,9 @@ class CreateStoresTable extends Migration
             $table->string('firdt_img_local');
             $table->string('second_img_local');
             $table->string('third_img_local');
-            $table->rememberToken();
-            $table->softDeletes();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
