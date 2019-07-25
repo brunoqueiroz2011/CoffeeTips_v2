@@ -52,6 +52,12 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[
+            'email.unique' => 'O email já foi cadastrado!!!',
+            'email.required' => 'A senha é obrigatoria!!!',
+            'password.required' => 'A senha é obrigatoria!!!',
+            'password.min' => 'A senha deve ter pelo menos 8 caracteres!!!',
+            'password.confirmed' => 'A confirmação da senha não corresponde.!!!'
         ]);
     }
 
@@ -67,6 +73,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'user_type_id' => 2,
         ]);
     }
 }

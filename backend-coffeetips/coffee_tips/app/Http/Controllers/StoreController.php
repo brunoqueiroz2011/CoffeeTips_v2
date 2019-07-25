@@ -16,7 +16,7 @@ class StoreController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:store');
+        $this->middleware('auth:admin');
     }
 
     /**
@@ -27,7 +27,7 @@ class StoreController extends Controller
     public function index()
     {
         //$store = Store::all();
-        return view('coffee');
+        return view('admin');
     }
 
     /**
