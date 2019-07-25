@@ -2,17 +2,20 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 
-class Store extends Authenticatable
+class Store extends Model
 {
+    protected $guard = 'admin';
+
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
-    use Notifiable, HasApiTokens;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -20,9 +23,7 @@ class Store extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'user_id',
         'description',
         'neighborhood',
         'number',
@@ -45,15 +46,6 @@ class Store extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
      * The attributes that should be cast to native types.
      *
      * @var array
@@ -61,6 +53,10 @@ class Store extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user(){
+        return $this->hasMany('App\User');
+    }
 
     public function products(){
         return $this->hasMany('App\Product');
