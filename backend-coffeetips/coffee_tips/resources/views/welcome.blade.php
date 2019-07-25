@@ -8,92 +8,30 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #EBCD84;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-
-        .position-ref {
-            position: relative;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-            color: #BF6C3B;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-            margin-top: 5%;
-        }
-        .gif{
-            width: 40%;
-        }
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: -26px;
-        }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        @media (max-width:776px){
-            .title {
-            font-size: 50px;
-            color: #BF6C3B;
-            }
-            .gif{
-                width: 100%;
-            }
-            .top-right {
-            position: absolute;
-            right: 80px;
-            top: -26px;
-        }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="{{ asset('css/main_page.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a class="btn" href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endauth
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('images/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            CoffeeTips
+        </a>
+        <div class="top-right collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a class="nav-item nav-link active" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                        <a class="nav-item nav-link active" href="{{ route('register') }}">{{ __('Cadastro') }}</a>
+                    @endauth
+                @endif
+            </div>
         </div>
-    @endif
+    </nav>
+
     <div class="content">
         <div class="m-b-md">
             <div>

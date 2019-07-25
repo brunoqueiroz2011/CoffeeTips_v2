@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-coffeeTips shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand title" href="{{ url('/') }}">
                     CoffeeTips
@@ -42,11 +42,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link title" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link title" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link title" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link title" href="{{ route('register') }}">{{ __('Cadastro') }}</a>
                                 </li>
                             @endif
                         @else
