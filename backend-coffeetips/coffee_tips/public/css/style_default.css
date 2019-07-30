@@ -1,11 +1,34 @@
 .bg-coffeeTips{
-    background-color: #EBCD84 !important;
+    background-color: moccasin !important;
 }
 
 .main_title{
     color: #BF6C3B !important;
 }
 
-.title{
+.title, p,h1,h2,h3,h4, .card-header, a{
     color: #BF6C3B !important;
+}
+
+.card-header{
+    font-weight: bold;
+    background-color: moccasin;
+}
+
+.card{
+    width: 152%;
+}
+
+.bc-main-nav-bar{
+    background-color: moccasin;
+}
+
+.spaceMenu{
+    padding-right: 10px;
+}
+
+@media (max-width:776px){
+    .card{
+        width: 100%;
+    }
 }

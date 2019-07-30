@@ -7,6 +7,9 @@ html, body {
     margin: 0;
 }
 
+.title, p,h1,h2,h3,h4, .card-header, a{
+    color: #BF6C3B !important;
+}
 
 .position-ref {
     position: relative;

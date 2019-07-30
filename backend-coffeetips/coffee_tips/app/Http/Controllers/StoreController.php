@@ -16,7 +16,7 @@ class StoreController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth');
     }
 
     /**
@@ -26,8 +26,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //$store = Store::all();
-        return view('admin');
+        $store = Store::all();
+        return view('forms.profile', compact($store));
     }
 
     /**
